@@ -16,7 +16,7 @@ class Pokemon
   end
 
   def self.find(new_id, db)
-    info = db.execute("SELECT * FROM db WHERE pokemon.id = ?", new_id)
+    info = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", new_id)
     pokemon = self.new(id: info[0], name: info[1], type: info[2], db: db, hp: info[3])
   end
 
